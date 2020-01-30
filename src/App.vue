@@ -1,16 +1,22 @@
 <template>
   <div id="app">
+    <Header />
+    <AddFilm />
       <Films v-bind:films="films" v-on:del-film="deleteFilm" />
   </div>
 </template>
 
 <script>
+import Header from './components/layout/Header';
 import Films from './components/Films';
+import AddFilm from './components/AddFilm';
 
 export default {
   name: 'app',
   components: {
-    Films
+    Header,
+    Films,
+    AddFilm
   },
   data () {
     return {
