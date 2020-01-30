@@ -1,13 +1,22 @@
 <template>
-  <div class="film-item" >
-    <p>{{film.title}}</p>
+  <div class="film-item" v-bind:class="{'is-complete':film.completed}">
+    <p>
+      <input type="checkbox" v-on:change="markComplete">
+      {{film.title}}
+      <button @click="$emit('del-film', film.id)" class="del">X</button>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: "FilmItem",
-  props: ["film"]
+  props: ["film"],
+  methods: {
+    markComplete() {
+      this.film.completed = !this.film.completed;
+    }
+  }
 }
 
 

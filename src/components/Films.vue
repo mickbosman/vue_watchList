@@ -1,7 +1,8 @@
 <template>
   <div>
     <div v-bind:key="film.id" v-for="film in films">
-      <FilmItem v-bind:film="film" />
+      <FilmItem v-bind:film="film" v-on:del-film="$emit('del-film',
+      film.id)" />
   </div>
 </div>
 </template>

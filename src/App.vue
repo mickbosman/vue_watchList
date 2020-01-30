@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <Films v-bind:films="films" />
+      <Films v-bind:films="films" v-on:del-film="deleteFilm" />
   </div>
 </template>
 
@@ -17,20 +17,25 @@ export default {
       films: [
         {
           id: 1,
-          title: "Todo One",
+          title: "Film One",
           completed: false
         },
         {
           id: 2,
-          title: "Todo Two",
-          completed: true
+          title: "Fiml Two",
+          completed: false
         },
         {
           id: 3,
-          title: "Todo Three",
+          title: "Film Three",
           completed: false
         }
       ]
+    }
+  },
+  methods: {
+    deleteFilm(id) {
+        this.films = this.films.filter(film => film.id !== id);
     }
   }
 }
