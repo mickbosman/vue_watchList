@@ -1,16 +1,34 @@
 <template>
   <div>
-    <form>
-      <input type="text" name="title" placeholder="add
-      Film...">
+    <form @submit="addFilm">
+      <input type="text" v-model="title" name="title" placeholder="addFilm...">
       <input type="submit" value="submit" class="btn">
     </form>
   </div>
 </template>
 
 <script>
+// import uuid from 'uuid';
 export default {
-  name: "AddFilm"
+  name: "AddFilm",
+  data () {
+    return {
+      title: ''
+    }
+  },
+  methods: {
+    addFilm (e) {
+      e.preventDefault();
+      const newFilm = {
+        title: this.title,
+        completed: false
+      }
+      // Send up to perent
+      this.$emit('add-film', newFilm);
+
+      this.title = '';
+    }
+  }
 }
 </script>
 
