@@ -37,8 +37,6 @@ export default {
       .then(res => this.films = [...this.films, res.data])
       // .catch(err => console.log(err));
 
-
-      this.films = [...this.films, newFilm];
     }
   },
   created() {
@@ -52,8 +50,9 @@ export default {
 <style>
  *{
  box-sizing: border-box;
- margin: 0;
+ margin: 10;
  padding: 0;
+ font-size: 20px
  }
 
  body {
@@ -66,7 +65,7 @@ export default {
    border: none;
    background: #555;
    color: #fff;
-   padding: 7px 20px;
+   padding:30px 20px;
    cursor: pointer;
  }
 

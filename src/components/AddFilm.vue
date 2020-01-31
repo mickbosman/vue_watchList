@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit="addFilm">
-      <input type="text" v-model="title" name="title" placeholder="addFilm...">
+      <input type="text" v-model="title" name="title" placeholder="Klik hier om een film toe tevoegen">
       <input type="submit" value="submit" class="btn">
     </form>
   </div>
@@ -40,6 +40,8 @@ export default {
   input[type="text"] {
     flex: 10;
     padding: 5px;
+    text-align: center;
+    font-size: 30px
   }
 
   input [type="submit"] {
